@@ -1,0 +1,5 @@
+
+The `type` field should be a unique identifier for your project, and the `handler` function should transform the incoming data into the format expected by Cryptoscan.
+
+3. **Connect to the WebSocket**: Use the `cryptoscan-provider` library to connect to the Cryptoscan WebSocket server and send your data. The library will handle the WebSocket connection and data validation.
+

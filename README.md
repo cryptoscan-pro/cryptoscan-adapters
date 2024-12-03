@@ -1,21 +1,10 @@
-# Cryptoscan Integration Service
+# Cryptoscan Adapters
 
-This service allows developers to integrate their data parsers with Cryptoscan by sending data through WebSocket connections. The service processes and validates incoming data before forwarding it to Cryptoscan.
+Cryptoscan Adapters allow developers to integrate their own data parsers with the Cryptoscan platform. The adapters act as a middleware, processing and validating the incoming data before forwarding it to Cryptoscan.
 
-## Overview
+## Integration Process
 
-The integration service acts as a middleware between your parser and Cryptoscan, ensuring data consistency and security. It supports various types of crypto-related data including:
+1. **Create a new project**: Inside the `src/projects` directory, create a new directory for your project. For example, `src/projects/my-project`.
 
-- CEX/DEX listings
-- Liquidations
-- Price updates
-- Network information
-- Arbitrage opportunities
-- Exchange announcements
-
-## Integration Steps
-
-### 1. Install CryptoscanProvider
-
-First, install the CryptoscanProvider library which handles the WebSocket communication:
+2. **Implement the adapter logic**: Within your project directory, create an `index.ts` file. This file should export an object with the following structure:
 

@@ -1,0 +1,14 @@
+
+4. **Deploy your adapter**: Once you've implemented your adapter, deploy it to a server with a public IP address. Make sure to whitelist this IP address in the `provider.ip` field of your adapter configuration.
+
+That's it! Your adapter is now integrated with the Cryptoscan platform, and your data will be processed and stored in the Cryptoscan database.
+
+## Adapter Guidelines
+
+- **Unique project type**: Ensure that the `type` field in your adapter configuration is unique across all projects.
+- **Whitelisted IP**: The `provider.ip` field should be set to the public IP address of the server hosting your adapter. This IP will be whitelisted to receive data from your project.
+- **Data transformation**: The `handler` function should transform the incoming data into the format expected by Cryptoscan. This includes setting the `key` field to a unique identifier for the data point, and the `price` field to the appropriate value.
+- **Error handling**: Ensure that your adapter handles errors gracefully and provides meaningful error messages to the Cryptoscan platform.
+- **Documentation**: Update this README file with any additional information or instructions specific to your adapter.
+
+By following these guidelines, you can ensure that your adapter integrates seamlessly with the Cryptoscan platform and provides a reliable and consistent data feed.
