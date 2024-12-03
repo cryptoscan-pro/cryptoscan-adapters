@@ -1,0 +1,24 @@
+{
+  "name": "cryptoscan-adapters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^9.1.2",
+    "bun": "^1.1.38",
+    "hono": "^4.6.6",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/bignumber.js": "^5.0.4",
+    "@types/bun": "1.1.13",
+    "@types/node": "^22.10.1",
+    "@types/uuid": "^10.0.0"
+  }
+}
