@@ -6,7 +6,7 @@ import { createProcessData } from "cryptoscan-provider";
 const { upgradeWebSocket, websocket } = createBunWebSocket();
 
 const app = new Hono();
-const processDataHandlers = new Map<string, (data: ({key: string} & Record<string, string | number>)) => string>();
+const processDataHandlers = new Map<string, (data: ({ key: string } & Record<string, string | number>)) => string>();
 
 async function loadProject(p: string) {
   const info = await import(p);
@@ -48,9 +48,14 @@ app.get('/',
         console.log("Received:", event.data.toString(), ws.remoteAddress)
 
         for (const trigger of triggerProjects) {
-          const response = trigger(event.data.toString(), ws.remoteAddress);
-          if (response) {
-            ws.send(response);
+          try {
+            const response = trigger(JSON.parse(event.data.toString()), ws.remoteAddress);
+            if (response) {
+              ws.send(response);
+            }
+          } catch (e) {
+            console.error(e);
+            ws.send(e.message);
           }
         }
       },
