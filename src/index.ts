@@ -53,7 +53,7 @@ app.get('/',
               ws.send(response);
             }
           } catch (e) {
-            console.error(e);
+            console.error(e, event);
             ws.send(e.message);
           }
         }
