@@ -1,0 +1,23 @@
+
+The adapter will receive the data, process it through your handler function, and forward the transformed data to the Cryptoscan system.
+
+## Adapter Functionality
+
+The adapter has the following responsibilities:
+
+1. **Load project definitions**: The adapter loads all project definitions from the `src/projects` directory and creates a list of trigger functions.
+
+2. **Handle WebSocket connections**: The adapter listens for WebSocket connections and processes incoming messages.
+
+3. **Invoke project handlers**: For each incoming message, the adapter checks the "type" field and invokes the corresponding project handler. The handler function is responsible for transforming the data into the required format.
+
+4. **Forward processed data**: After the data is processed by the project handler, the adapter forwards the transformed data to the Cryptoscan system.
+
+## Contribution Guidelines
+
+If you would like to contribute to the Cryptoscan Project Adapter, please follow these guidelines:
+
+1. Create a new branch for your changes.
+2. Implement your changes, ensuring that the documentation is updated accordingly.
+3. Submit a pull request for review.
+

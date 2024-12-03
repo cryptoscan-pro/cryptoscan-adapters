@@ -1,30 +1,3 @@
 
-The `type` field should be a unique identifier for your project, and the `provider` object should contain the following:
+3. **Send data to the WebSocket server**: Your application should connect to the `vs.cryptoscan.pro` WebSocket server and send data in the following format:
 
-- `ip`: The IP address that is allowed to send data to the adapter. This is used for whitelisting.
-- `handler`: An asynchronous function that takes the incoming data and returns the transformed data. The returned object should have the following fields:
-  - `key`: A unique identifier for the data entry.
-  - `price`: The price associated with the data entry.
-  - Any other necessary fields.
-
-3. **Connect to the WebSocket**: To send data to the Cryptoscan platform, connect to the WebSocket server at `ws://vs.cryptoscan.pro`. When connecting, include the following query parameters:
-   - `keys`: A comma-separated list of the keys you want to send.
-   - `types`: A comma-separated list of the data types for each key (e.g., `string,number,boolean`).
-
-   Then, send the data as a comma-separated string, matching the order of the `keys` and `types` parameters.
-
-4. **Example usage**:
-
-   ```javascript
-   const ws = new WebSocket('ws://vs.cryptoscan.pro?keys=id,price&types=string,number');
-
-   ws.onopen = () => {
-     ws.send('123,45.67');
-   };
-
-   ws.onmessage = (event) => {
-     console.log('Received response:', event.data);
-   };
-   ```
-
-By following this integration process, you can easily connect your own data sources to the Cryptoscan platform using the adapter system.
