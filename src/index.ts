@@ -2,6 +2,7 @@ import { readdirSync } from 'fs';
 import { createBunWebSocket } from "hono/bun";
 import { Hono } from 'hono';
 import processData from "cryptoscan-provider";
+import { serve } from "bun";
 
 const { upgradeWebSocket, websocket } = createBunWebSocket();
 
@@ -31,28 +32,66 @@ async function loadProjects() {
 
 const triggerProjects = await loadProjects();
 
-app.get('/',
-  (upgradeWebSocket as any)(() => {
-    return {
-      onMessage: async (event: any, ws: any) => {
+let idx = 0;
+serve({
+  port: 3000,
+  fetch(req, server) {
+    const url = new URL(req.url, `http://${req.headers.get("host")}`);
+    const keys = url.searchParams.get("keys");
+    const types = url.searchParams.get("types");
+    if (server.upgrade(req, {
+      data: { keys, types }
+    })) {
+      return;
+    }
+    return new Response("Not a WebSocket request", { status: 400 });
+  },
+  websocket: {
+    open() {
+      console.log('WebSocket connection opened.');
+    },
+    close() {
+      console.log('WebSocket connection closed.');
+    },
+    async message(ws, message) {
+      let data = {};
+
+      try {
+        idx += 1;
+        const keys = (ws.data as any).keys?.split(',');
+        const types = (ws.data as any).types?.split(',');
+
+        if (keys?.length && types?.length) {
+          const values = message.toString().split(',').map((v, idx) => {
+            const type = types[idx];
+            if (type === 'boolean' || v === 'true' || v === 'false') {
+              return Number(v === 'true');
+            }
+            if (type === 'number') {
+              return Number(v);
+            }
+            return v;
+          }) as any;
+          data = Object.fromEntries(keys.map((key: string, idx: number) => [key, values[idx]]));
+        }
+        else {
+          data = JSON.parse(message.toString())
+        }
+
         for (const trigger of triggerProjects) {
           try {
-            const response = await trigger(JSON.parse(event.data.toString()), ws.remoteAddress);
+            const response = await trigger(JSON.parse(message.toString()), ws.remoteAddress);
             if (response) {
               ws.send(response);
             }
           } catch (e) {
-            console.error(e, event);
+            console.error(e, message);
             ws.send(e.message);
           }
         }
-      },
-    }
+      } catch (err) {
+        console.log({ error: 'Wrong data', reason: err.message })
+      }
+    },
   }
-  )
-)
-
-export default {
-  fetch: app.fetch,
-  websocket,
-};
+})
