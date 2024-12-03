@@ -1,8 +1,0 @@
-
-### 2. Create a Project
-
-To integrate your parser:
-
-1. Create a new folder in the `src/projects` directory
-2. Create an `index.ts` file with the following structure:
-
