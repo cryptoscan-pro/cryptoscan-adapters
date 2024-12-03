@@ -80,7 +80,7 @@ serve({
 
         for (const trigger of triggerProjects) {
           try {
-            const response = await trigger(JSON.parse(message.toString()), ws.remoteAddress);
+            const response = await trigger(data, ws.remoteAddress);
             if (response) {
               ws.send(response);
             }
