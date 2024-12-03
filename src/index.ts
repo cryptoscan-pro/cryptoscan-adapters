@@ -1,12 +1,11 @@
 import { readdirSync } from 'fs';
 import { createBunWebSocket } from "hono/bun";
 import { Hono } from 'hono';
-import { createProcessData } from "cryptoscan-provider";
+import processData from "cryptoscan-provider";
 
 const { upgradeWebSocket, websocket } = createBunWebSocket();
 
 const app = new Hono();
-const processDataHandlers = new Map<string, (data: ({ key: string } & Record<string, string | number>)) => string>();
 
 async function loadProject(p: string) {
   const info = await import(p);
@@ -17,16 +16,6 @@ async function loadProject(p: string) {
     if ((process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type) {
       if (!data?.key) {
         return "key is required";
-      }
-
-      const processData = processDataHandlers.get(type);
-
-      if (!processData) {
-        const processData = createProcessData()
-        processDataHandlers.set(type, processData as any);
-        console.log(await handler(data))
-        processData(await handler(data));
-        return;
       }
 
       processData(await handler(data));
