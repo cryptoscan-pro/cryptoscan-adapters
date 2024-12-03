@@ -35,8 +35,10 @@ serve({
     const url = new URL(req.url, `http://${req.headers.get("host")}`);
     const keys = url.searchParams.get("keys");
     const types = url.searchParams.get("types");
+    const clientIp = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || server.requestIP(req)?.address;
+    
     if (server.upgrade(req, {
-      data: { keys, types }
+      data: { keys, types, clientIp }
     })) {
       return;
     }
@@ -75,7 +77,7 @@ serve({
 
         for (const trigger of triggerProjects) {
           try {
-            const response = await trigger(data, ws.remoteAddress);
+            const response = await trigger(data, (ws.data as any).clientIp);
             if (response) {
               ws.send(response);
             }
