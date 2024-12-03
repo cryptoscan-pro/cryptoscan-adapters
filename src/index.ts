@@ -13,22 +13,24 @@ async function loadProject(p: string) {
 
   const { default: { type, provider: { ip, handler } } } = info;
 
-  return (data: Record<string, string | number>, senderIp: string) => {
-    if ((process.env.NODE_ENV !== "development" && senderIp === ip) && type === data.type) {
-      if (!('key' in data)) {
+  return async (data: Record<string, string | number>, senderIp: string) => {
+    console.log(type, data.type, process.env.NODE_ENV !== "development" && senderIp === ip);
+    if ((process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type) {
+      if (!data?.key) {
         return "key is required";
       }
+
 
       const processData = processDataHandlers.get(type);
 
       if (!processData) {
         const processData = createProcessData()
         processDataHandlers.set(type, processData as any);
-        processData(handler(data));
+        processData(await handler(data));
         return;
       }
 
-      processData(handler(data));
+      processData(await handler(data));
     }
   }
 }
@@ -45,7 +47,7 @@ app.get('/',
   (upgradeWebSocket as any)(() => {
     return {
       onMessage: async (event: any, ws: any) => {
-        console.log("Received:", event.data.toString(), ws.remoteAddress)
+        console.log("Received:", event.data.toString(), ws)
 
         for (const trigger of triggerProjects) {
           try {
