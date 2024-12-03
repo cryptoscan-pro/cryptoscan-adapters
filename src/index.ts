@@ -14,12 +14,11 @@ async function loadProject(p: string) {
   const { default: { type, provider: { ip, handler } } } = info;
 
   return async (data: Record<string, string | number>, senderIp: string) => {
-    console.log(type, data.type, process.env.NODE_ENV !== "development" && senderIp === ip);
+    console.log(type, data.type, (process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type);
     if ((process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type) {
       if (!data?.key) {
         return "key is required";
       }
-
 
       const processData = processDataHandlers.get(type);
 
@@ -51,7 +50,7 @@ app.get('/',
 
         for (const trigger of triggerProjects) {
           try {
-            const response = trigger(JSON.parse(event.data.toString()), ws.remoteAddress);
+            const response = await trigger(JSON.parse(event.data.toString()), ws.remoteAddress);
             if (response) {
               ws.send(response);
             }
