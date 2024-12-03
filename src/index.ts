@@ -14,7 +14,6 @@ async function loadProject(p: string) {
   const { default: { type, provider: { ip, handler } } } = info;
 
   return async (data: Record<string, string | number>, senderIp: string) => {
-    console.log(type, data.type, (process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type);
     if ((process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type) {
       if (!data?.key) {
         return "key is required";
@@ -25,6 +24,7 @@ async function loadProject(p: string) {
       if (!processData) {
         const processData = createProcessData()
         processDataHandlers.set(type, processData as any);
+        console.log(await handler(data))
         processData(await handler(data));
         return;
       }
