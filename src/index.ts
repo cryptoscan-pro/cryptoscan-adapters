@@ -7,14 +7,12 @@ const { upgradeWebSocket, websocket } = createBunWebSocket();
 const app = new Hono();
 
 async function loadProject(p: string) {
-  console.log(p, await import(p));
-
   const info = await import(p);
 
-  const { default: { provider: { ip, handler } } } = info;
+  const { default: { type, provider: { ip, handler } } } = info;
 
   return (data: Record<string, string | number>, senderIp: string) => {
-    if (senderIp === ip) {
+    if (senderIp === ip && type === data.type) {
       return handler(data);
     }
   }
