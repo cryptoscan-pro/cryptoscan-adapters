@@ -10,7 +10,6 @@ export async function handler(data: Record<string, any>) {
 		return
 	}
 
-	console.log(data)
 	const jsonStartIndex = data.content.indexOf("{");
 	const jsonEndIndex = data.content.indexOf("}") + 1;
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);

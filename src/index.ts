@@ -46,8 +46,6 @@ app.get('/',
   (upgradeWebSocket as any)(() => {
     return {
       onMessage: async (event: any, ws: any) => {
-        console.log("Received:", event.data.toString(), ws)
-
         for (const trigger of triggerProjects) {
           try {
             const response = await trigger(JSON.parse(event.data.toString()), ws.remoteAddress);
