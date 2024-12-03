@@ -1,28 +1,31 @@
 import { v5 } from "uuid";
 import { BigNumber } from "bignumber.js";
+import { fixJsonString } from "../../utils/fixJsonString";
 
-const TYPE = "bybit-liquidations";
-const PROVIDER_IP = "178.20.208.99";
-
-export async function handler(data: Record<string, string | number>) {
+export async function handler(data: Record<string, any>) {
 	if (!data?.content) {
 		return
 	}
 
+	const jsonStartIndex = data.content.indexOf("{");
+	const jsonEndIndex = data.content.indexOf("}") + 1;
+	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
+	const result = JSON.parse(fixJsonString(jsonString));
+
 	return {
-		...data,
-		key: v5(TYPE + data.key, v5.URL),
-		price: new BigNumber(data.price).toNumber(),
-		usd: new BigNumber(data.usd).toNumber(),
+		...result,
+		key: v5(data.key, v5.URL),
+		price: new BigNumber(result.price).toNumber(),
+		usd: new BigNumber(result.usd).toNumber(),
 		type: 'liquidations',
 		exchange: 'bybit',
 	}
 }
 
 export default {
-	type: TYPE,
+	type: "bybit-liquidations",
 	provider: {
-		ip: PROVIDER_IP,
+		ip: "178.20.208.99",
 		handler,
 	},
 }
