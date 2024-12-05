@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs';
+﻿import { readdirSync } from 'fs';
 import processData from "cryptoscan-provider";
 import { serve } from "bun";
 
@@ -57,6 +57,7 @@ serve({
       try {
         const keys = (ws.data as any).keys?.split(',');
         const types = (ws.data as any).types?.split(',');
+        console.log(keys, types, message)
 
         if (keys?.length && types?.length) {
           const values = message.toString().split(',').map((v, idx) => {

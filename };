@@ -1,3 +1,0 @@
-
-3. **Send data to the WebSocket server**: Your application should connect to the `vs.cryptoscan.pro` WebSocket server and send data in the following format:
-
