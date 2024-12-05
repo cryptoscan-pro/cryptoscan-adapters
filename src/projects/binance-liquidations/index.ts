@@ -13,10 +13,10 @@ export async function handler(data: Record<string, any>) {
 	const result = JSON.parse(fixJsonString(jsonString));
 
 	return {
-		...result,
 		key: v5(data.key, v5.URL),
 		price: new BigNumber(result.price).toNumber(),
 		usd: new BigNumber(result.usd).toNumber(),
+		symbol: result.symbol,
 		type: 'liquidations',
 		exchange: 'binance',
 	}
