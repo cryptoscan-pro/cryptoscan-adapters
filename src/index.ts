@@ -8,7 +8,7 @@ async function loadProject(p: string) {
   const { default: { type, provider: { ip, handler } } } = info;
 
   return async (data: Record<string, string | number>, senderIp: string) => {
-    if ((process.env.NODE_ENV === "development" || senderIp === ip) && type === data.type) {
+    if ((process.env.NODE_ENV === "development" || senderIp === ip) && type.toLowerCase() === data.type.toLowerCase()) {
       if (!data.key) {
         data.key = data.id;
       }
