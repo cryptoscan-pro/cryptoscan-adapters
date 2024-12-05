@@ -1,8 +1,10 @@
 import BigNumber from "bignumber.js"
+import { fixJsonString } from "../../utils/fixJsonString";
+import { v5 } from "uuid";
 
 export async function handler(data: Record<string, any>) {
 	if (!data?.content) {
-		return
+		return "error"
 	}
 
 	const jsonStartIndex = data.content.indexOf("{");
@@ -11,6 +13,7 @@ export async function handler(data: Record<string, any>) {
 	const result = JSON.parse(fixJsonString(jsonString));
 
 	return {
+		key: v5(data.key, v5.URL),
 		type: "arbitrage",
 		variant: result.variant,
 		symbol: result.symbol,
