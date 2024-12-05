@@ -16,7 +16,13 @@ async function loadProject(p: string) {
         return "key is required";
       }
 
-      processData(await handler(data));
+      const d = await handler(data);
+
+      if (!d) {
+        return "Invalid data";
+      }
+
+      processData(d);
     }
   }
 }
@@ -57,7 +63,6 @@ serve({
       try {
         const keys = (ws.data as any).keys?.split(',');
         const types = (ws.data as any).types?.split(',');
-        console.log(keys, types, message)
 
         if (keys?.length && types?.length) {
           const values = message.toString().split(',').map((v, idx) => {
