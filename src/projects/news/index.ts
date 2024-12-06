@@ -4,7 +4,7 @@ import { v5 } from "uuid";
 
 export async function handler(data: Record<string, any>) {
 	if (!data?.content) {
-		return "error"
+		return;
 	}
 
 	const jsonStartIndex = data.content.indexOf("{");
@@ -16,10 +16,10 @@ export async function handler(data: Record<string, any>) {
 		key: v5(data.key, v5.URL),
 		type: "news",
     text: result.text,
-    exchange: result.exchange,
-    symbol: result.symbol,
-    source: result.source,
-    link: result.sourceLink,
+    exchange: result?.exchange || '',
+    symbol: result?.symbol || '',
+    source: result?.source || '',
+    link: result?.sourceLink || '',
 	}
 }
 
