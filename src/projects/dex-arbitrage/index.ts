@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js"
+﻿import BigNumber from "bignumber.js"
 import { fixJsonString } from "../../utils/fixJsonString";
 import { v5 } from "uuid";
 

@@ -14,23 +14,17 @@ export async function handler(data: Record<string, any>) {
 
 	return {
 		key: v5(data.key, v5.URL),
-		type: "arbitrage",
-		variant: "cex-cex",
-		symbol: result.symbol,
-		exchangeFrom: result.exchangeFrom,
-    exchangeTo: result.exchangeTo,
-    buyPriceFrom: new BigNumber(result.buyPriceFrom).toNumber(),
-    buyPriceTo: new BigNumber(result.buyPriceTo).toNumber(),
-    totalBuyUSD: new BigNumber(result.totalBuyUSD).toNumber(),
-    totalSellUSD: new BigNumber(result.totalSellUSD).toNumber(),
-    network: result.network,
-    spread: new BigNumber(result.spread).toNumber(),
-    contract: result.contract
+		type: "news",
+    text: result.text,
+    exchange: result.exchange,
+    symbol: result.symbol,
+    source: result.source,
+    link: result.sourceLink,
 	}
 }
 
 export default {
-	type: "cex-arbitrage",
+	type: "news",
 	provider: {
 		ip: "0.0.0.0",
 		handler,
