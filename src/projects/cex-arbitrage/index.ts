@@ -25,7 +25,7 @@ export async function handler(data: Record<string, any>) {
     totalSellUSD: new BigNumber(result.totalSellUSD).toNumber(),
     network: result.network,
     spread: new BigNumber(result.spread).toNumber(),
-    contract: result.contract
+    contract: result?.contract
 	}
 }
 
