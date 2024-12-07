@@ -13,7 +13,7 @@ export async function handler(data: Record<string, any>) {
 	const result = JSON.parse(fixJsonString(jsonString));
 
 	return {
-    ...data,
+    ...result,
 		key: v5(data.key, v5.URL),
 		type: 'arbitrage-rates',
 	}
