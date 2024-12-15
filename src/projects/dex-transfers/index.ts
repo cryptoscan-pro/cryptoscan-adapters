@@ -15,8 +15,8 @@ export async function handler(data: Record<string, any>) {
 	return {
 		key: v5(data.key, v5.URL),
 		symbol: result.symbol,
-		amount: new BigNumber(result.amount).toNumber(),
-		usd: new BigNumber(result.usd).toNumber(),
+		amount: new BigNumber(result?.amount || 0).toNumber(),
+		usd: new BigNumber(result?.usd || 0).toNumber(),
 		from: result.from,
 		to: result.to,
 		exchange: result.exchange,

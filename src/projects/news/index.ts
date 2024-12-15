@@ -14,11 +14,11 @@ export async function handler(data: Record<string, any>) {
 	return {
 		key: v5(data.key, v5.URL),
 		type: "news",
-    text: result.text,
-    exchange: result?.exchange || '',
-    symbol: result?.symbol || '',
-    source: result?.source || '',
-    link: result?.sourceLink || '',
+		text: result.text,
+		exchange: result?.exchange || '',
+		symbol: result?.symbol || '',
+		source: result?.source || '',
+		link: result?.sourceLink || '',
 	}
 }
 
