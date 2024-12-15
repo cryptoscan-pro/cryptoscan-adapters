@@ -14,9 +14,9 @@ export async function handler(data: Record<string, any>) {
 	return {
 		key: v5(data.key, v5.URL),
 		symbol: result.symbol,
-    exchange: result.exchange,
-		pairLink: result.pairLink,
-		link: result.link,
+		exchange: result?.exchange || '',
+		pairLink: result?.pairLink || '',
+		link: result?.link || '',
 		type: 'listings',
 		variant: 'cex',
 	}
