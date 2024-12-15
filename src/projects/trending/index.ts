@@ -17,8 +17,8 @@ export async function handler(data: Record<string, any>) {
 	return {
 		key: v5(data.key, v5.URL),
 		symbol: result.symbol,
-		reference: result?.reference,
-        contract: result?.contract,
+		reference: result?.reference || '',
+        contract: result?.contract || '',
         change: new BigNumber(result?.change || 0).toNumber(),
 		type: 'trending',
 	}
