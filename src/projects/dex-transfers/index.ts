@@ -12,6 +12,8 @@ export async function handler(data: Record<string, any>) {
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
 	const result = JSON.parse(fixJsonString(jsonString));
 
+	console.log(result);
+
 	return {
 		key: v5(data.key, v5.URL),
 		symbol: result.symbol,
