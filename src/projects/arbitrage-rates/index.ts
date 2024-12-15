@@ -4,7 +4,7 @@ import { fixJsonString } from "../../utils/fixJsonString";
 
 export async function handler(data: Record<string, any>) {
 	return {
-    ...data,
+		...data,
 		key: v5(data.key, v5.URL),
 		type: 'arbitrage-rates',
 	}
