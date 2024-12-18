@@ -4,6 +4,7 @@ export async function handler({ id, ...data }: Record<string, any>) {
 	return {
 		key: v5(id, v5.URL),
 		...data,
+		type: 'prices',
 	};
 }
 
