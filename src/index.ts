@@ -22,7 +22,7 @@ async function loadProject(p: string) {
         return "Invalid data";
       }
 
-      processData(d);
+      processData(d, true);
     }
   }
 }
