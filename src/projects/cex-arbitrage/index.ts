@@ -9,14 +9,15 @@ export async function handler(data: Record<string, any>) {
 		variant: "cex-cex",
 		symbol: data.symbol,
 		exchangeFrom: data.exchangeFrom,
-    exchangeTo: data.exchangeTo,
-    buyPriceFrom: new BigNumber(data.buyPriceFrom).toNumber(),
-    buyPriceTo: new BigNumber(data.buyPriceTo).toNumber(),
-    totalBuyUSD: new BigNumber(data.totalBuyUSD).toNumber(),
-    totalSellUSD: new BigNumber(data.totalSellUSD).toNumber(),
-    network: data.network,
-    spread: new BigNumber(data.spread).toNumber(),
-    contract: data?.contract
+		exchangeTo: data.exchangeTo,
+		buyPriceFrom: new BigNumber(data.buyPriceFrom).toNumber(),
+		buyPriceTo: new BigNumber(data.buyPriceTo).toNumber(),
+		totalBuyUSD: new BigNumber(data.totalBuyUSD).toNumber(),
+		totalSellUSD: new BigNumber(data.totalSellUSD).toNumber(),
+		network: data.network,
+		format: data.format,
+		spread: new BigNumber(data.spread).toNumber(),
+		contract: data?.contract
 	}
 }
 
