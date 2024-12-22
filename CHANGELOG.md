@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.0.1...v1.0.2) (2024-12-22)
+
+
+### Bug Fixes
+
+* **deploy.yml:** update GitHub token secret from GITHUB_TOKEN to GH_TOKEN for Docker login in deployment workflow ([4b575b7](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/4b575b7935d07a2d379e34c83f22de2a9e336da5))
+
 ## [1.0.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.0.0...v1.0.1) (2024-12-22)
 
 
