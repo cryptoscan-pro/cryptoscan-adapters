@@ -25,6 +25,6 @@ jobs:
             cd ${{ secrets.SSH_PATH }}
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker image prune -f
-            docker-compose pull ${{ github.repository }}
-            docker-compose up -d ${{ github.repository }}
+            docker-compose pull ${GITHUB_REPOSITORY##*/}
+            docker-compose up -d ${GITHUB_REPOSITORY##*/}
             docker logout ghcr.io
