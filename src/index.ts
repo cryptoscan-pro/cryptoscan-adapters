@@ -1,6 +1,8 @@
 ﻿import { readdirSync } from 'fs';
 import processData from "cryptoscan-provider";
 import { serve } from "bun";
+import { setupCluster } from "./cluster";
+import { config } from "bun";
 
 async function loadProject(p: string) {
   const info = await import(p);
@@ -35,8 +37,14 @@ async function loadProjects() {
 
 const triggerProjects = await loadProjects();
 
-serve({
-  port: 3000,
+const ports = process.env.PORTS?.split(",").map(Number) || [3000];
+const isWorker = setupCluster(ports);
+
+if (isWorker) {
+  const port = Number(process.env.WORKER_PORT);
+  
+  serve({
+  port,
   fetch(req, server) {
     const url = new URL(req.url, `http://${req.headers.get("host")}`);
     const keys = url.searchParams.get("keys");
