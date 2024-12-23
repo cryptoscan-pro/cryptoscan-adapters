@@ -18,8 +18,8 @@ export async function handler(data: Record<string, any>) {
 		usd: new BigNumber(result.usd).toNumber(),
 		symbol: result.symbol,
 		type: 'liquidations',
-		variant: result.variant,
-		exchange: result.exchange,
+		variant: result?.variant || '',
+		exchange: result.exchange || '',
 	}
 }
 
