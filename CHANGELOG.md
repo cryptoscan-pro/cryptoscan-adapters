@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.1.0...v1.2.0) (2024-12-23)
+
+
+### Features
+
+* Add metrics tracking and logging for worker processes ([0e90b5e](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/0e90b5ee99746b66bd4bb2efc6277ed0d945dbc2))
+* **package.json:** add winston and @axiomhq/winston dependencies for logging functionality ([f5e1740](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/f5e1740c40462c634e804030ada9c6a7cf480263))
+
 # [1.1.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.0.2...v1.1.0) (2024-12-23)
 
 
