@@ -65,6 +65,7 @@ if (isWorker) {
         console.log('WebSocket connection closed.');
       },
       async message(ws, message) {
+        incrementCounter(Number(process.env.WORKER_PORT));
         let data = {};
 
         try {
