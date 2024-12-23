@@ -2,7 +2,6 @@
 import processData from "cryptoscan-provider";
 import { serve } from "bun";
 import { setupCluster } from "./cluster";
-import { config } from "bun";
 
 async function loadProject(p: string) {
   const info = await import(p);
