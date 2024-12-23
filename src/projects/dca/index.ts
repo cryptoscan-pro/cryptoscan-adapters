@@ -16,7 +16,7 @@ export async function handler(data: Record<string, any>) {
 
 	return {
 		key: v5(data.key, v5.URL),
-		usd: new BigNumber(result.usd).toNumber(),
+		amount: new BigNumber(result.amount).toNumber(),
 		symbolFrom: result.symbolFrom,
 		symbol: result.symbol,
 		priceChange5m: new BigNumber(result.priceChange5m).toNumber(),
