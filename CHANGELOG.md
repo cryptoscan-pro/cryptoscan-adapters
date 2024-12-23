@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.4.0...v1.4.1) (2024-12-23)
+
+
+### Bug Fixes
+
+* **dca/index.ts:** rename usd property to amount for clarity in response structure ([7a7447c](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/7a7447c6f3a6db0a783cb4f241d5f6acc35c2b78))
+
 # [1.4.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.3.0...v1.4.0) (2024-12-23)
 
 
