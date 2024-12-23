@@ -1,5 +1,4 @@
 import cluster from "cluster";
-import { cpus } from "os";
 
 export function setupCluster(ports: number[]) {
   if (cluster.isPrimary) {
