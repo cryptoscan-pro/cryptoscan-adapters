@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.5.0...v1.6.0) (2024-12-23)
+
+
+### Features
+
+* **news:** add tags property to handler function to include parsed tags from result for better categorization ([842e9dc](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/842e9dc9f196c43cf4679eed4f7e11edfee17280))
+
 # [1.5.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.4.1...v1.5.0) (2024-12-23)
 
 
