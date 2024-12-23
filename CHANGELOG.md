@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.3.0...v1.4.0) (2024-12-23)
+
+
+### Features
+
+* Add metrics import to index.ts ([8b90903](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/8b909031a15e5759325f3880e0002aa7a33e3dfa))
+* Add WebSocket message counter using incrementCounter ([37f77d2](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/37f77d250706eb1614fecc52b3572bfbb3ac96b4))
+
 # [1.3.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.2.0...v1.3.0) (2024-12-23)
 
 
