@@ -2,6 +2,7 @@
 import processData from "cryptoscan-provider";
 import { serve } from "bun";
 import { setupCluster } from "./cluster";
+import { incrementCounter } from "./utils/metrics";
 
 async function loadProject(p: string) {
   const info = await import(p);
