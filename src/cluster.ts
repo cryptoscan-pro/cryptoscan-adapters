@@ -18,10 +18,14 @@ export function setupCluster(ports: number[]) {
         // Add metrics logging interval
         setInterval(() => {
             const metrics = getAndResetMetrics();
-            logger.info('Processing metrics for last 5 seconds:', {
-                byPort: metrics.byPort,
-                totalMessages: metrics.total
+            
+            // Separate log for each port
+            Object.entries(metrics.byPort).forEach(([port, count]) => {
+                logger.info(`Port ${port} processed ${count} messages in last 5 seconds`);
             });
+            
+            // Separate log for total count
+            logger.info(`Total processed ${metrics.total} messages in last 5 seconds`);
         }, 5000);
     }
 
