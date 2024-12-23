@@ -21,11 +21,11 @@ export function setupCluster(ports: number[]) {
             
             // Separate log for each port
             Object.entries(metrics.byPort).forEach(([port, count]) => {
-                logger.info(`Port ${port} processed ${count} messages in last 5 seconds`);
+                logger.info('Port message processing metrics', { port: Number(port), count });
             });
             
             // Separate log for total count
-            logger.info(`Total processed ${metrics.total} messages in last 5 seconds`);
+            logger.info('Total message processing metrics', { count: metrics.total });
         }, 5000);
     }
 
