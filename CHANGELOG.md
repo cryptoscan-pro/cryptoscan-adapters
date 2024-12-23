@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.4.1...v1.5.0) (2024-12-23)
+
+
+### Bug Fixes
+
+* **liquidations:** handle potential undefined properties for variant and exchange to prevent runtime errors ([c421a61](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/c421a61f5d04d4b6e5e2e8c403c7d592fd166f07))
+
+
+### Features
+
+* **liquidations:** add variant property to the handler response for better data representation ([d87e990](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/d87e990fea2350ce2c2ab52b8d6d40308eff4b23))
+
 ## [1.4.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.4.0...v1.4.1) (2024-12-23)
 
 
