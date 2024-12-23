@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.2.0...v1.3.0) (2024-12-23)
+
+
+### Features
+
+* Modify logging format to separate port and total message metrics ([9bf6607](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/9bf66079661431fb366aa63a0f0f4fea504efdd9))
+
 # [1.2.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.1.0...v1.2.0) (2024-12-23)
 
 
