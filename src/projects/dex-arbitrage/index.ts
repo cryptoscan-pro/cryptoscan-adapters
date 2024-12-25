@@ -7,8 +7,8 @@ export async function handler(data: Record<string, any>) {
 		return "error"
 	}
 
-	const jsonStartIndex = data.content.indexOf("[");
-	const jsonEndIndex = data.content.lastIndexOf("]") + 1;
+	const jsonStartIndex = data.content.indexOf("{");
+	const jsonEndIndex = data.content.lastIndexOf("}") + 1;
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
 	const result = JSON.parse(fixJsonString(jsonString));
 	const exchangeFrom = data.variant === 'dex-cex' ? 'dex' : (data.exchange || '');
