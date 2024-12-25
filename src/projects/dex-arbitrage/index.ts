@@ -7,8 +7,8 @@ export async function handler(data: Record<string, any>) {
 		return "error"
 	}
 
-	const jsonStartIndex = data.content.indexOf("{");
-	const jsonEndIndex = data.content.indexOf("}") + 1;
+	const jsonStartIndex = data.content.indexOf("[");
+	const jsonEndIndex = data.content.lastIndexOf("]") + 1;
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
 	const result = JSON.parse(fixJsonString(jsonString));
 
@@ -26,7 +26,7 @@ export async function handler(data: Record<string, any>) {
 		totalBuyUSD: new BigNumber(result.totalBuyUSD).toNumber(),
 		totalSellUSD: new BigNumber(result.totalSellUSD).toNumber(),
 		network: result.network,
-		spread: new BigNumber(result.spread).toNumber(),
+		spread: new BigNumber(result.dif).toNumber(),
 		contract: result.contract
 	}
 }
