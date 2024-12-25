@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.7.0...v1.8.0) (2024-12-25)
+
+
+### Features
+
+* **cex-announcements:** add JSON parsing and validation for content in handler function to ensure data integrity ([8280c7a](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/8280c7a5f5d2842530c77b8e9143d08e4b83cbc7))
+
 # [1.7.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.6.0...v1.7.0) (2024-12-24)
 
 
