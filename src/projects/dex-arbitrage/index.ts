@@ -12,20 +12,22 @@ export async function handler(data: Record<string, any>) {
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
 	const result = JSON.parse(fixJsonString(jsonString));
 
+	console.log(result)
+
 	return {
 		key: v5(data.key, v5.URL),
 		type: "arbitrage",
 		variant: result.variant,
 		symbol: result.symbol,
 		exchangeFrom: result.exchangeFrom,
-    exchangeTo: result.exchangeTo,
-    buyPriceFrom: new BigNumber(result.buyPriceFrom).toNumber(),
-    buyPriceTo: new BigNumber(result.buyPriceTo).toNumber(),
-    totalBuyUSD: new BigNumber(result.totalBuyUSD).toNumber(),
-    totalSellUSD: new BigNumber(result.totalSellUSD).toNumber(),
-    network: result.network,
-    spread: new BigNumber(result.spread).toNumber(),
-    contract: result.contract
+		exchangeTo: result.exchangeTo,
+		buyPriceFrom: new BigNumber(result.buyPriceFrom).toNumber(),
+		buyPriceTo: new BigNumber(result.buyPriceTo).toNumber(),
+		totalBuyUSD: new BigNumber(result.totalBuyUSD).toNumber(),
+		totalSellUSD: new BigNumber(result.totalSellUSD).toNumber(),
+		network: result.network,
+		spread: new BigNumber(result.spread).toNumber(),
+		contract: result.contract
 	}
 }
 
