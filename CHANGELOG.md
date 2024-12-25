@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.6.0...v1.7.0) (2024-12-24)
+
+
+### Features
+
+* **cex-announcements:** enhance handler function to generate UUID and structure announcement data ([08ec589](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/08ec5893bdbef36c69b18f1f592239cf2a980cb0))
+
 # [1.6.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.5.0...v1.6.0) (2024-12-23)
 
 
