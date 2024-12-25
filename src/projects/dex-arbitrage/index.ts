@@ -11,6 +11,8 @@ export async function handler(data: Record<string, any>) {
 	const jsonEndIndex = data.content.lastIndexOf("]") + 1;
 	const jsonString = data.content.substring(jsonStartIndex, jsonEndIndex);
 	const result = JSON.parse(fixJsonString(jsonString));
+	const exchangeFrom = data.variant === 'dex-cex' ? 'dex' : (data.exchange || '');
+	const exchangeTo = data.variant === 'dex-cex' ? (data.exchange || '') : 'dex';
 
 	console.log(result)
 
@@ -19,8 +21,8 @@ export async function handler(data: Record<string, any>) {
 		type: "arbitrage",
 		variant: result.variant,
 		symbol: result.symbol,
-		exchangeFrom: result.exchangeFrom,
-		exchangeTo: result.exchangeTo,
+		exchangeFrom,
+		exchangeTo,
 		buyPriceFrom: new BigNumber(result.buyPriceFrom).toNumber(),
 		buyPriceTo: new BigNumber(result.buyPriceTo).toNumber(),
 		totalBuyUSD: new BigNumber(result.totalBuyUSD).toNumber(),
