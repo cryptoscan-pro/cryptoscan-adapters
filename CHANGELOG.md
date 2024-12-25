@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.9.1...v1.10.0) (2024-12-25)
+
+
+### Bug Fixes
+
+* **dex-arbitrage:** update JSON parsing to handle array format instead of object format for correct data extraction ([a5bfc65](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/a5bfc6530091332accbca9204f47367ae4ba034c))
+
+
+### Features
+
+* **dex-arbitrage:** add dynamic exchangeFrom and exchangeTo assignment based on variant to enhance flexibility in handling exchanges ([d474897](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/d474897806c8a8cafa0b36d874b48aa224da42d3))
+
 ## [1.9.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.9.0...v1.9.1) (2024-12-25)
 
 
