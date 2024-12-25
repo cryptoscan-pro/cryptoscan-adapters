@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.8.0...v1.9.0) (2024-12-25)
+
+
+### Features
+
+* **logger.ts:** export logger instance to allow usage in other modules ([5afad73](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/5afad734cb4db7ffc1d6f1b2243e05a37579441e))
+
 # [1.8.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.7.0...v1.8.0) (2024-12-25)
 
 
