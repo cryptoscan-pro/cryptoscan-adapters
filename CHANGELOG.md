@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.10.0...v1.10.1) (2024-12-25)
+
+
+### Bug Fixes
+
+* **dex-arbitrage:** update JSON parsing to handle object format instead of array format in data.content to ensure correct data extraction ([321ce95](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/321ce951e28aa7d116e8e190afe4c41959fe4074))
+
 # [1.10.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.9.1...v1.10.0) (2024-12-25)
 
 
