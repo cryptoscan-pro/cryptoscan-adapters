@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.9.0...v1.9.1) (2024-12-25)
+
+
+### Bug Fixes
+
+* **dex-arbitrage:** format object properties for consistency and readability in handler function return statement ([c8c8b8b](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/c8c8b8b2503dcd91c22a0b51312ef75d3df23e2d))
+
 # [1.9.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.8.0...v1.9.0) (2024-12-25)
 
 
