@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.11.0...v1.12.0) (2024-12-26)
+
+
+### Bug Fixes
+
+* Ensure total messages metric is converted to number type ([9bb599b](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/9bb599b1fd3ac263920769b13e1d8a2c680144fe))
+
+
+### Features
+
+* Implement inter-process metrics communication for cluster workers ([8cc3b51](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/8cc3b5182fddc0bad27c79f00dfda67efa9586f4))
+
 # [1.11.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.10.1...v1.11.0) (2024-12-26)
 
 
