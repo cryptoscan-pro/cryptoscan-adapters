@@ -10,7 +10,7 @@ export function incrementCounter(port: number) {
 export function getAndResetMetrics() {
     const metrics = {
         byPort: Object.fromEntries(messageCounters),
-        total: totalMessages
+        total: Number(totalMessages)
     };
     
     messageCounters = new Map<number, number>();
