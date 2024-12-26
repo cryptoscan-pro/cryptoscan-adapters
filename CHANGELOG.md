@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.10.1...v1.11.0) (2024-12-26)
+
+
+### Features
+
+* **futures-arbitrage:** implement handler function to process arbitrage data and return structured result ([9c9fc9f](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/9c9fc9fcde97f2829beaa0a2907fe1f3ec0a4152))
+
 ## [1.10.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.10.0...v1.10.1) (2024-12-25)
 
 
