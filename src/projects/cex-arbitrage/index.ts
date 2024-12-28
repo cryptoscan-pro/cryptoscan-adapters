@@ -3,10 +3,13 @@ import { fixJsonString } from "../../utils/fixJsonString";
 import { v5 } from "uuid";
 
 export async function handler(data: Record<string, any>) {
+	const variantFrom = data.exchangeFrom.includes('futures') ? 'futures' : 'cex';
+	const variantTo = data.exchangeTo.includes('futures') ? 'futures' : 'cex';
+	const variant = variantFrom + '-' + variantTo;
 	return {
 		key: v5(data.key, v5.URL),
 		type: "arbitrage",
-		variant: "cex-cex",
+		variant,
 		symbol: data.symbol,
 		exchangeFrom: data.exchangeFrom,
 		exchangeTo: data.exchangeTo,
