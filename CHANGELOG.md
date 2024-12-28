@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.12.0...v1.13.0) (2024-12-26)
+
+
+### Features
+
+* **package.json:** add test script to run vitest for unit testing ([b363add](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/b363add832d23e79a571ee160d0cbb1a919a1cf7))
+
 # [1.12.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.11.0...v1.12.0) (2024-12-26)
 
 
