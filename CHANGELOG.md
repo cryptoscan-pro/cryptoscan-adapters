@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.13.0...v1.14.0) (2024-12-28)
+
+
+### Features
+
+* **cex-arbitrage:** dynamically set variant based on exchange types to enhance flexibility in handling different exchange scenarios ([2420ece](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/2420ece4bea3710d5491d19e9a3bdbd854e0dfcc))
+
 # [1.13.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.12.0...v1.13.0) (2024-12-26)
 
 
