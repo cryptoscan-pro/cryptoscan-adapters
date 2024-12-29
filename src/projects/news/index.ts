@@ -15,7 +15,7 @@ export async function handler(data: Record<string, any>) {
 		key: v5(data.key, v5.URL),
 		type: "news",
 		text: result.text,
-		tags: result?.tags?.split(',') || '',
+		tags: result?.tags || '',
 		exchange: result?.exchange || '',
 		symbol: result?.symbol || '',
 		source: result?.source || '',
