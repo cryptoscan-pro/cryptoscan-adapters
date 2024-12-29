@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.14.0...v1.14.1) (2024-12-29)
+
+
+### Bug Fixes
+
+* **news/index.ts:** update tags assignment to handle undefined values correctly by removing split operation ([590e2b8](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/590e2b836e47d21a537f33389b218dd1b2076d76))
+
 # [1.14.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.13.0...v1.14.0) (2024-12-28)
 
 
