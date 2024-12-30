@@ -16,9 +16,9 @@ export async function handler(data: Record<string, any>) {
 
 	return {
 		key: v5(data.key, v5.URL),
-		amount: new BigNumber(result.amount || 0).toNumber(),
-		symbolFrom: result.symbolFrom || '',
-		symbol: result.symbol || '',
+		amount: new BigNumber(result.amount || 0).toNumber() || 0,
+		symbolFrom: result.symbolFrom.replace('#', '') || '',
+		symbol: result.symbol.replace('#', '') || '',
 		contract: result.contract || '',
 		duration: result.duration || '',
 		interval: result.interval || '5m',
