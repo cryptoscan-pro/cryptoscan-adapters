@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.15.0...v1.15.1) (2024-12-30)
+
+
+### Bug Fixes
+
+* **dca/index.ts:** handle potential undefined values for amount and symbols to prevent runtime errors and ensure consistent output ([9496e62](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/9496e6260318868f035b267691dc3f9a290efcda))
+
 # [1.15.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.14.1...v1.15.0) (2024-12-30)
 
 
