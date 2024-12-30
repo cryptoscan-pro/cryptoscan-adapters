@@ -29,12 +29,12 @@ export async function handler(data: Record<string, any>) {
 		volume24h: new BigNumber(result.volume24h | 0).toNumber(),
 		volume1h: new BigNumber(result.volume1h || 0).toNumber(),
 		type: 'activity',
-		variant: 'dex',
+		variant: result.variant || 'dex',
 	}
 }
 
 export default {
-	type: "da",
+	type: "activity",
 	provider: {
 		ip: "178.20.208.99",
 		handler,
