@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.14.1...v1.15.0) (2024-12-30)
+
+
+### Features
+
+* **bridge-arbitrage:** add new bridge-arbitrage project handler for processing arbitrage data ([61659ca](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/61659cacd4adfcca1141a9ade478392a01b9d2d9))
+
 ## [1.14.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.14.0...v1.14.1) (2024-12-29)
 
 
