@@ -14,21 +14,23 @@ export async function handler(data: Record<string, any>) {
 
     return {
         key: v5(data.key, v5.URL),
-        liquidationPrice: new BigNumber(result?.liquidationPrice || 0).toNumber(),
-        tokenAmount: new BigNumber(result?.tokenAmount || 0).toNumber(),
-        usdValue: new BigNumber(result?.usdValue || 0).toNumber(),
-        protocol: result.protocol,
+        price: new BigNumber(result.liquidationPrice).toNumber(),
+        usd: new BigNumber(result.usdValue).toNumber(),
+        symbol: result.asset,
+        type: 'liquidations',
+        variant: 'dex',
+        exchange: result.protocol,
+        // Additional DEX-specific fields
         chain: result.chain,
         address: result.address,
         url: result.url,
         currentPrice: new BigNumber(result?.currentPrice || 0).toNumber(),
-        asset: result.asset,
-        type: 'liquidation'
+        tokenAmount: new BigNumber(result?.tokenAmount || 0).toNumber()
     }
 }
 
 export default {
-    type: "liquidation-position",
+    type: "liquidations",
     provider: {
         ip: "178.20.208.99",
         handler,
