@@ -1,3 +1,11 @@
+# [1.17.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.16.0...v1.17.0) (2024-12-31)
+
+
+### Features
+
+* **activity:** add new activity handler to process and transform data ([719abba](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/719abba5c4f9e5fbd8ca4c492461003a597fb163))
+* Add new ETF data handler with BigNumber processing ([5aa1f3d](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/5aa1f3ddeedc7ca6aa5aecebe13f94b6258de999))
+
 # [1.16.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.15.1...v1.16.0) (2024-12-30)
 
 
