@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.15.1...v1.16.0) (2024-12-30)
+
+
+### Features
+
+* **da:** add new handler for processing data with UUID and BigNumber support ([eab3ff3](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/eab3ff30bb8f60894a8fec8a13f0d1e8759949a7))
+
 ## [1.15.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.15.0...v1.15.1) (2024-12-30)
 
 
