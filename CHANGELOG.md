@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.17.0...v1.17.1) (2024-12-31)
+
+
+### Bug Fixes
+
+* **etf/index.ts:** update type property value from 'etf-data' to 'etf' for consistency in data representation ([fa3f83b](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/fa3f83b0f77bb987e19c429677748d9154260075))
+
 # [1.17.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.16.0...v1.17.0) (2024-12-31)
 
 
