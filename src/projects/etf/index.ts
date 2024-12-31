@@ -26,12 +26,12 @@ export async function handler(data: Record<string, any>) {
         aum: new BigNumber(result?.aum || 0).toNumber(),
         volume: new BigNumber(result?.volume || 0).toNumber(),
         chain: result.chain,
-        type: 'etf-data'
+        type: 'etf'
     }
 }
 
 export default {
-    type: "etf",
+    type: "etf-data",
     provider: {
         ip: "178.20.208.99",
         handler,
