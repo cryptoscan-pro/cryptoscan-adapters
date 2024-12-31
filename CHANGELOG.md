@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.17.1...v1.18.0) (2024-12-31)
+
+
+### Features
+
+* Add dex liquidations handler for parsing and processing liquidation data ([428e25c](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/428e25ceac9fedaa71c695e80d738057417e4e24))
+
 ## [1.17.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.17.0...v1.17.1) (2024-12-31)
 
 
