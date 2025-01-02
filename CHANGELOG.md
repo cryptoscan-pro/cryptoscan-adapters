@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.19.0...v1.20.0) (2025-01-02)
+
+
+### Features
+
+* Add Telegram notifications for CI/CD workflow status ([914d7ed](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/914d7ed538190dd339eae7c66a6e7646fe448dee))
+
 # [1.19.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.18.0...v1.19.0) (2025-01-02)
 
 
