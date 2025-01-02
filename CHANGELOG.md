@@ -1,3 +1,16 @@
+# [1.19.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.18.0...v1.19.0) (2025-01-02)
+
+
+### Bug Fixes
+
+* **logger.ts:** update defaultMeta service name from 'user-service' to 'adapters' for better clarity on logging context ([d646d56](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/d646d5610fea66a78174f1c63b1a20c0aaaa3558))
+
+
+### Features
+
+* Add formatError utility function for error logging and context ([396f72c](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/396f72cae9e20933ce908542a025257c63b23fcc))
+* Enhance WebSocket error logging with detailed context and timestamps ([2b229af](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/2b229af8b925dff4b76a81f061d10f341060db49))
+
 # [1.18.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.17.1...v1.18.0) (2024-12-31)
 
 
