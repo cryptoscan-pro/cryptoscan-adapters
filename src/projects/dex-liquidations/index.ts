@@ -30,7 +30,7 @@ export async function handler(data: Record<string, any>) {
 }
 
 export default {
-    type: "liquidations",
+    type: "dex-liquidations",
     provider: {
         ip: "178.20.208.99",
         handler,
