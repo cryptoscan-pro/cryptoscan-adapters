@@ -67,43 +67,64 @@ if (isWorker) {
         console.log('WebSocket connection closed.');
       },
       async message(ws, message) {
-        incrementCounter(Number(process.env.WORKER_PORT));
-        let data = {};
-
         try {
-          const keys = (ws.data as any).keys?.split(',');
-          const types = (ws.data as any).types?.split(',');
+          incrementCounter(Number(process.env.WORKER_PORT));
+          let data = {};
+          const messageStr = message.toString();
+          
+          console.log(`[${new Date().toISOString()}] Received message:`, messageStr);
 
-          if (keys?.length && types?.length) {
-            const values = message.toString().split(',').map((v, idx) => {
-              const type = types[idx];
-              if (type === 'boolean' || v === 'true' || v === 'false') {
-                return Number(v === 'true');
-              }
-              if (type === 'number') {
-                return Number(v);
-              }
-              return v;
-            }) as any;
-            data = Object.fromEntries(keys.map((key: string, idx: number) => [key, values[idx]]));
-          }
-          else {
-            data = JSON.parse(message.toString())
-          }
+          try {
+            const keys = (ws.data as any).keys?.split(',');
+            const types = (ws.data as any).types?.split(',');
 
-          for (const trigger of triggerProjects) {
-            try {
-              const response = await trigger(data, (ws.data as any).clientIp);
-              if (response) {
-                ws.send(response);
-              }
-            } catch (e) {
-              console.error(e, message);
-              ws.send(e.message);
+            if (keys?.length && types?.length) {
+              const values = messageStr.split(',').map((v, idx) => {
+                const type = types[idx];
+                if (type === 'boolean' || v === 'true' || v === 'false') {
+                  return Number(v === 'true');
+                }
+                if (type === 'number') {
+                  return Number(v);
+                }
+                return v;
+              }) as any;
+              data = Object.fromEntries(keys.map((key: string, idx: number) => [key, values[idx]]));
+              console.log('[Data Parsing] Parsed structured data:', data);
             }
+            else {
+              data = JSON.parse(messageStr);
+              console.log('[Data Parsing] Parsed JSON data:', data);
+            }
+
+            for (const trigger of triggerProjects) {
+              try {
+                const response = await trigger(data, (ws.data as any).clientIp);
+                if (response) {
+                  console.log('[Trigger Response]', response);
+                  ws.send(response);
+                }
+              } catch (e) {
+                console.error('[Trigger Error]', formatError(e, {
+                  data,
+                  message: messageStr,
+                  clientIp: (ws.data as any).clientIp
+                }));
+                ws.send(e.message);
+              }
+            }
+          } catch (parseErr) {
+            console.error('[Parse Error]', formatError(parseErr, {
+              rawMessage: messageStr,
+              wsData: ws.data
+            }));
+            console.log({ error: 'Wrong data', reason: parseErr.message });
           }
-        } catch (err) {
-          console.log({ error: 'Wrong data', reason: err.message })
+        } catch (globalErr) {
+          console.error('[Global Handler Error]', formatError(globalErr, {
+            rawMessage: message?.toString(),
+            wsData: ws.data
+          }));
         }
       },
     }
