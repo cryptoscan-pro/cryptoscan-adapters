@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.21.0...v1.21.1) (2025-01-02)
+
+
+### Bug Fixes
+
+* **dex-liquidations:** update type from "liquidations" to "dex-liquidations" for better clarity and specificity ([b6c9d03](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/b6c9d03a3c1bb3f2f19fd9efee3813bfacfb5a69))
+
 # [1.21.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.20.0...v1.21.0) (2025-01-02)
 
 
