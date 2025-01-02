@@ -5,6 +5,15 @@ import { setupCluster } from "./cluster";
 import { incrementCounter } from "./utils/metrics";
 import { log } from 'console';
 
+function formatError(error: Error, context: any = {}) {
+  return {
+    timestamp: new Date().toISOString(),
+    error: error.message,
+    stack: error.stack,
+    context
+  };
+}
+
 async function loadProject(p: string) {
   const info = await import(p);
 
