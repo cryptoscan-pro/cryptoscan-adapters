@@ -1,3 +1,11 @@
+# [1.21.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.20.0...v1.21.0) (2025-01-02)
+
+
+### Features
+
+* Add clickable links and translate Telegram notifications to English ([77a8273](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/77a82737360295486182838d174397bb285248b6))
+* Modify Telegram notification format with clickable repository name ([2712a1e](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/2712a1ed218cf2963264e4c8ec674018b2ec7f33))
+
 # [1.20.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.19.0...v1.20.0) (2025-01-02)
 
 
