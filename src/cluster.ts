@@ -5,7 +5,7 @@ export function setupCluster(ports: number[]) {
     if (cluster.isPrimary) {
         logger.info(`Primary ${process.pid} is running`);
 
-        ports.forEach((port, index) => {
+        ports.forEach((port) => {
             cluster.fork({ WORKER_PORT: port });
             logger.info(`Started worker for port ${port}`);
         });
@@ -21,7 +21,7 @@ export function setupCluster(ports: number[]) {
             }
         });
 
-        cluster.on("exit", (worker, code, signal) => {
+        cluster.on("exit", (worker) => {
             logger.info(`Worker ${worker.process.pid} died`);
         });
     }
