@@ -4,7 +4,6 @@ import { serve } from "bun";
 import { setupCluster } from "./cluster";
 import { incrementCounter } from "./utils/metrics";
 import { logger } from "./utils/logger";
-import { log } from 'console';
 
 function formatError(error: Error, context: any = {}) {
   return {
