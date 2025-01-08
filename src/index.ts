@@ -81,7 +81,10 @@ if (isWorker) {
           let data = {};
           const messageStr = message.toString();
           
-          console.log(`[${new Date().toISOString()}] Received message:`, messageStr);
+          logger.info(`Incoming message on port ${process.env.WORKER_PORT}:`, {
+            message: messageStr,
+            timestamp: new Date().toISOString()
+          });
 
           try {
             const keys = (ws.data as any).keys?.split(',');
@@ -99,22 +102,30 @@ if (isWorker) {
                 return v;
               }) as any;
               data = Object.fromEntries(keys.map((key: string, idx: number) => [key, values[idx]]));
-              console.log('[Data Parsing] Parsed structured data:', data);
+              logger.info('Successfully parsed structured data:', {
+                port: process.env.WORKER_PORT,
+                parsedData: data,
+                messageType: 'structured'
+              });
             }
             else {
               data = JSON.parse(messageStr);
-              console.log('[Data Parsing] Parsed JSON data:', data);
+              logger.info('Successfully parsed JSON data:', {
+                port: process.env.WORKER_PORT,
+                parsedData: data,
+                messageType: 'json'
+              });
             }
 
             for (const trigger of triggerProjects) {
               try {
                 const response = await trigger(data, (ws.data as any).clientIp);
                 if (response) {
-                  console.log('[Trigger Response]', response);
+                  logger.info('[Trigger Response]', { response });
                   ws.send(response);
                 }
               } catch (e) {
-                console.error('[Trigger Error]', formatError(e, {
+                logger.error('[Trigger Error]', formatError(e, {
                   data,
                   message: messageStr,
                   clientIp: (ws.data as any).clientIp
@@ -123,17 +134,26 @@ if (isWorker) {
               }
             }
           } catch (parseErr) {
-            console.error('[Parse Error]', formatError(parseErr, {
+            logger.error('Failed to parse message:', {
+              port: process.env.WORKER_PORT,
+              error: parseErr.message,
               rawMessage: messageStr,
-              wsData: ws.data
+              timestamp: new Date().toISOString()
+            });
+            ws.send(JSON.stringify({ 
+              error: 'Parse error', 
+              message: parseErr.message,
+              originalMessage: messageStr
             }));
-            console.log({ error: 'Wrong data', reason: parseErr.message });
           }
         } catch (globalErr) {
-          console.error('[Global Handler Error]', formatError(globalErr, {
+          logger.error('Global message handling error:', {
+            port: process.env.WORKER_PORT,
+            error: globalErr.message,
+            stack: globalErr.stack,
             rawMessage: message?.toString(),
-            wsData: ws.data
-          }));
+            timestamp: new Date().toISOString()
+          });
         }
       },
     }
