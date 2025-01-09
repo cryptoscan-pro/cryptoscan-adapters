@@ -1,3 +1,13 @@
+# [1.22.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.21.1...v1.22.0) (2025-01-09)
+
+
+### Features
+
+* Add handler for cex-futures-arbitrage data processing ([babb0bc](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/babb0bc3d54e720b68dceaf7f6018091f49d7dee))
+* Add initial implementation for CEX futures arbitrage project ([90efe87](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/90efe876b1610536d2369fa3091aef1231c21ef3))
+* Add logger import from utils/logger ([6655b1c](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/6655b1ca92600bd52e13259be0505a500d670540))
+* Enhance message logging with detailed error and parsing information ([b3997fd](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/b3997fd55e777fab8a65c3b36d80990fae80d3e1))
+
 ## [1.21.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.21.0...v1.21.1) (2025-01-02)
 
 
