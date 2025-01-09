@@ -17,7 +17,7 @@ export async function handler(data: Record<string, any>) {
 		exchange: result?.exchange || '',
 		pairLink: result?.pairLink || '',
 		link: result?.link || '',
-		isAddedToApi: result?.isAddedToApi === true ? 1 : 0,
+		isApiListing: result?.isApiListing === true ? 1 : 0,
 		isWillBeAdded: result?.isWillBeAdded === true ? 1 : 0,
 		type: 'listings',
 		variant: 'cex',
