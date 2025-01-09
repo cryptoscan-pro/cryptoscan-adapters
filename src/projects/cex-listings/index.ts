@@ -18,6 +18,7 @@ export async function handler(data: Record<string, any>) {
 		pairLink: result?.pairLink || '',
 		link: result?.link || '',
 		isAddedToApi: result?.isAddedToApi === true ? 1 : 0,
+		isWillBeAdded: result?.isWillBeAdded === true ? 1 : 0,
 		type: 'listings',
 		variant: 'cex',
 	}
