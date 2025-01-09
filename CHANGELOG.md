@@ -1,3 +1,15 @@
+# [1.24.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.23.0...v1.24.0) (2025-01-09)
+
+
+### Bug Fixes
+
+* **cex-listings:** rename isAddedToApi to isApiListing for clarity and consistency in the data structure ([90e9d7f](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/90e9d7fb39a6f5ab6dbbfab28907038f77b5affa))
+
+
+### Features
+
+* **cex-listings:** add isWillBeAdded field to handler response for better data representation ([654136b](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/654136b06b5c887d00791e97cbe07da106e67542))
+
 # [1.23.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.22.0...v1.23.0) (2025-01-09)
 
 
