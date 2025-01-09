@@ -16,7 +16,8 @@ export async function handler(data: Record<string, any>) {
 
     return {
         key: v5(data.key, v5.URL),
-        type: "cex-futures-arbitrage",
+        type: "arbitrage",
+        variant: 'futures-futures',
         spread: new BigNumber(result.spread).toNumber(),
         fundingSpread: new BigNumber(result.fundingSpread).toNumber(),
         feePercentage: new BigNumber(result.feePercentage).toNumber(),
