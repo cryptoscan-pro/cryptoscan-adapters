@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.24.0...v1.25.0) (2025-01-09)
+
+
+### Features
+
+* **cex-listings:** add isFuturesListing property to handler response for better data representation ([d99936d](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/d99936d30b930cdef8c2f9173ba0cd4a14413373))
+
 # [1.24.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.23.0...v1.24.0) (2025-01-09)
 
 
