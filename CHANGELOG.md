@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.22.0...v1.23.0) (2025-01-09)
+
+
+### Features
+
+* **cex-futures-arbitrage:** add symbol to the response object for better clarity on the arbitrage data ([a29cd86](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/a29cd86a817ccb85085589e6dac1cb0f78ae97bf))
+
 # [1.22.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.21.1...v1.22.0) (2025-01-09)
 
 
