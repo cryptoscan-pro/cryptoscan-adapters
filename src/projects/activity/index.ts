@@ -21,6 +21,8 @@ export async function handler(data: Record<string, any>) {
 		symbol: result.symbol.replace('#', '') || '',
 		contract: result.contract || '',
 		change: new BigNumber(result.priceChange5m || result.change || 0).toNumber(),
+		duration: result.duration || '',
+		exchange: result.exchange || '',
 		priceChange5m: new BigNumber(result.priceChange5m || result.change || 0).toNumber(),
 		priceChange6h: new BigNumber(result.priceChange6h || 0).toNumber(),
 		priceChange24h: new BigNumber(result.priceChange24h || 0).toNumber(),
