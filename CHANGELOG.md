@@ -1,3 +1,10 @@
+## [1.26.2](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.1...v1.26.2) (2025-01-10)
+
+
+### Bug Fixes
+
+* **activity/index.ts:** add optional chaining to prevent runtime errors when accessing properties of result object ([5db8318](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/5db83185021c02b5fea0247ba2a577c1da968bf9))
+
 ## [1.26.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.0...v1.26.1) (2025-01-10)
 
 
