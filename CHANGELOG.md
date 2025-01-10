@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.0...v1.26.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* **activity/index.ts:** set default duration to '5m' for consistency in data handling ([44eb099](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/44eb0990d4cfc10fcdc4fc86f30f83bb29ac28b9))
+
 # [1.26.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.25.0...v1.26.0) (2025-01-10)
 
 
