@@ -13,12 +13,13 @@ export async function handler(data: Record<string, any>) {
 	const result = JSON.parse(fixJsonString(jsonString));
 
 	console.log(result)
+	// {"type":"activity","variant":"cex","symbol":"COOKIE","price":76178,"change":2,"duration":"1 min","volume24h":5212000000,"exchange":"Bybit"}
 
 	return {
 		key: v5(data.key, v5.URL),
 		amount: new BigNumber(result.amount || 0).toNumber() || 0,
-		symbolFrom: result.symbolFrom.replace('#', '') || '',
-		symbol: result.symbol.replace('#', '') || '',
+		symbolFrom: result.symbolFrom?.replace('#', '') || '',
+		symbol: result.symbol?.replace('#', '') || '',
 		contract: result.contract || '',
 		change: new BigNumber(result.priceChange5m || result.change || 0).toNumber(),
 		duration: result.duration || '5m',
