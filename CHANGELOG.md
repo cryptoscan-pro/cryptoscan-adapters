@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.25.0...v1.26.0) (2025-01-10)
+
+
+### Features
+
+* **activity:** add duration and exchange fields to handler response for enhanced data completeness ([aa03bc1](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/aa03bc1731c24d3538dc08ff0e1480be2ed90603))
+
 # [1.25.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.24.0...v1.25.0) (2025-01-09)
 
 
