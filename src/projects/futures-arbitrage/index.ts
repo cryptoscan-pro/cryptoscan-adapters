@@ -17,7 +17,7 @@ export async function handler(data: Record<string, any>) {
     return {
         key: v5(data.key, v5.URL),
         type: "arbitrage",
-        variant: 'futures-futures',
+        variant: result.variant || 'futures-futures',
         symbol: result.symbol,
         spread: new BigNumber(result.spread).toNumber(),
         fundingSpread: new BigNumber(result.fundingSpread || 0).toNumber(),
