@@ -3,7 +3,7 @@ import { BigNumber } from "bignumber.js";
 import { fixJsonString } from "../../utils/fixJsonString";
 
 /**
- * Интерфейс, описывающий возвращаемый объект для activity-volume
+ * Interface describing the return object for activity-volume
  */
 interface ActivityVolumeResponse {
     key: string;
@@ -29,11 +29,11 @@ interface ActivityVolumeResponse {
 }
 
 /**
- * Обрабатывает данные об объемах активности
- * @param data - Входные данные
- * @param data.content - JSON строка с данными
- * @param data.key - Ключ для генерации UUID
- * @returns {Promise<ActivityVolumeResponse | undefined>} Объект с обработанными данными об объемах или undefined если нет content
+ * Processes volume activity data
+ * @param data - Input data
+ * @param data.content - JSON string with data
+ * @param data.key - Key for UUID generation
+ * @returns {Promise<ActivityVolumeResponse | undefined>} Object with processed volume data or undefined if no content
  */
 export async function handler(data: Record<string, any>): Promise<ActivityVolumeResponse | undefined> {
 	if (!data?.content) {

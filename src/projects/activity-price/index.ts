@@ -3,7 +3,7 @@ import { BigNumber } from "bignumber.js";
 import { fixJsonString } from "../../utils/fixJsonString";
 
 /**
- * Интерфейс, описывающий возвращаемый объект для activity-price
+ * Interface describing the return object for activity-price
  */
 interface ActivityPriceResponse {
     key: string;
@@ -29,11 +29,11 @@ interface ActivityPriceResponse {
 }
 
 /**
- * Обрабатывает данные о ценовой активности
- * @param data - Входные данные
- * @param data.content - JSON строка с данными
- * @param data.key - Ключ для генерации UUID
- * @returns {Promise<ActivityPriceResponse | undefined>} Объект с обработанными данными о ценах или undefined если нет content
+ * Processes price activity data
+ * @param data - Input data
+ * @param data.content - JSON string with data
+ * @param data.key - Key for UUID generation
+ * @returns {Promise<ActivityPriceResponse | undefined>} Object with processed price data or undefined if no content
  */
 export async function handler(data: Record<string, any>): Promise<ActivityPriceResponse | undefined> {
 	if (!data?.content) {
