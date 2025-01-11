@@ -2,7 +2,40 @@ import { v5 } from "uuid";
 import { BigNumber } from "bignumber.js";
 import { fixJsonString } from "../../utils/fixJsonString";
 
-export async function handler(data: Record<string, any>) {
+/**
+ * Интерфейс, описывающий возвращаемый объект для activity-volume
+ */
+interface ActivityVolumeResponse {
+    key: string;
+    symbolFrom: string;
+    symbol: string;
+    amount: number;
+    change: number;
+    interval: string;
+    price: number;
+    volume24h: number;
+    volume1h: number;
+    volumeChange24h: number;
+    volume: number;
+    bidsUsd: number;
+    asksUsd: number;
+    liquidity: number;
+    priceChange5m: number;
+    priceChange6h: number;
+    priceChange24h: number;
+    changeType: 'volume';
+    type: 'activity';
+    variant: 'dex' | 'cex';
+}
+
+/**
+ * Обрабатывает данные об объемах активности
+ * @param data - Входные данные
+ * @param data.content - JSON строка с данными
+ * @param data.key - Ключ для генерации UUID
+ * @returns {Promise<ActivityVolumeResponse | undefined>} Объект с обработанными данными об объемах или undefined если нет content
+ */
+export async function handler(data: Record<string, any>): Promise<ActivityVolumeResponse | undefined> {
 	if (!data?.content) {
 		return
 	}
