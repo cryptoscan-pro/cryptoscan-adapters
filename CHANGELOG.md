@@ -1,3 +1,15 @@
+# [1.28.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.27.0...v1.28.0) (2025-01-12)
+
+
+### Bug Fixes
+
+* **activity-price:** restore changeType property to ActivityPriceResponse interface for consistency ([b49b0e5](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/b49b0e5cb1d726b40d870eb5ef16949dcd453bba))
+
+
+### Features
+
+* **activity:** add new activity-related handlers for processing data ([02aa00a](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/02aa00acd9077b525fc34e5c656a32153b1144b1))
+
 # [1.27.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.2...v1.27.0) (2025-01-10)
 
 
