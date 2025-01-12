@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.30.0...v1.31.0) (2025-01-12)
+
+
+### Features
+
+* **relations:** add groupKey and field to handler function for enhanced data handling ([a6120d6](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/a6120d6640d601ceba3cb5bfd59d665b9d89a52a))
+
 # [1.30.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.29.0...v1.30.0) (2025-01-12)
 
 
