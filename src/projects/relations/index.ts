@@ -5,6 +5,7 @@ function handler(data: Record<string, any>) {
         key: v5(data.key, v5.URL),
         from: data.from,
         to: data.to,
+        type: 'relations',
     }
 }
 
