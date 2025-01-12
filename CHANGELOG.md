@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.29.0...v1.30.0) (2025-01-12)
+
+
+### Features
+
+* **relations:** add type property to handler output for better clarity on data structure ([549fd99](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/549fd996cfa93ef9c37ecde16463662348e1566c))
+
 # [1.29.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.28.0...v1.29.0) (2025-01-12)
 
 
