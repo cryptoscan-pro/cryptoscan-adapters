@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.2...v1.27.0) (2025-01-10)
+
+
+### Features
+
+* implement 0futures-arbitrage project and remove cex-futures-arbitrage project to streamline functionality ([c2deb4b](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/c2deb4bd6868327ddf5428097e6ce635e9934e5e))
+
 ## [1.26.2](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.26.1...v1.26.2) (2025-01-10)
 
 
