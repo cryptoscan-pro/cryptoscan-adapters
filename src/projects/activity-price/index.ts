@@ -9,7 +9,6 @@ interface ActivityPriceResponse {
     key: string;
     symbolFrom: string;
     symbol: string;
-    changeType: 'price';
     change: number;
     interval: string;
     price: number;
@@ -25,6 +24,7 @@ interface ActivityPriceResponse {
     contract: string;
     days: number;
     type: 'activity';
+    changeType: 'price';
     variant: 'dex' | 'cex';
 }
 
@@ -49,7 +49,6 @@ export async function handler(data: Record<string, any>): Promise<ActivityPriceR
 		key: v5(data.key, v5.URL),
 		symbolFrom: result.symbolFrom?.replace('#', '') || '',
 		symbol: result.symbol?.replace('#', '') || '',
-		changeType: 'price',
 		change: new BigNumber(result.change || result.priceChange || 0).toNumber(),
 		interval: result.interval || result.duration || '',
 		price: new BigNumber(result.price || 0).toNumber(),
@@ -65,6 +64,7 @@ export async function handler(data: Record<string, any>): Promise<ActivityPriceR
 		contract: result.contract || '',
 		days: result.days || 0,
 		type: 'activity',
+		changeType: 'price',
 		variant: result.contract ? 'dex' : 'cex',
 	}
 }

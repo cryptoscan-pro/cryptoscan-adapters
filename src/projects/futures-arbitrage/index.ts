@@ -18,7 +18,7 @@ export async function handler(data: Record<string, any>) {
         key: v5(data.key, v5.URL),
         type: "arbitrage",
         variant: result.variant || 'futures-futures',
-        symbol: result.symbol,
+        symbol: result.symbol.replace('USDT', ''),
         spread: new BigNumber(result.spread).toNumber(),
         fundingSpread: new BigNumber(result.fundingSpread || 0).toNumber(),
         feePercentage: new BigNumber(result.feePercentage || 0).toNumber(),
