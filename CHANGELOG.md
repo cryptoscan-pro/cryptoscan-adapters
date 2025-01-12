@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.28.0...v1.29.0) (2025-01-12)
+
+
+### Features
+
+* **relations:** add new relations module with UUID v5 handler for key generation ([8b65a3c](https://github.com/cryptoscan-pro/cryptoscan-adapters/commit/8b65a3c07460f929751461134fa8e0db49407fc8))
+
 # [1.28.0](https://github.com/cryptoscan-pro/cryptoscan-adapters/compare/v1.27.0...v1.28.0) (2025-01-12)
 
 
